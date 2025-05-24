@@ -1,97 +1,92 @@
-Developer Guide
-📘 Overview
-This document serves as a guide for developers contributing to the Task Manager project. It outlines the code structure, design principles, tools used, and guidelines for development and testing.
+🧑‍💻 Developer Guide
+Welcome to the Task Manager (C++) project! This guide will help you understand the code structure, development workflow, and best practices for contributing effectively.
 
-🧱 Project Structure
-python
+📁 Project Structure
+arduino
 Copy
 Edit
 Task-Manager/
-├── main.cpp                  # Entry point
-├── task.cpp                  # Task class and logic
-├── file_manager.cpp          # File operations
-├── date_util.cpp             # Date handling utilities
-├── search.cpp                # Search functionality
-├── storage.cpp               # Storage management
-├── filter.cpp                # Task filtering logic
-├── test_task_manager.cpp     # Unit tests for TaskManager
-├── test_task.cpp             # Unit tests for Task class
-├── developer_guide.md        # Developer documentation
-├── README.md                 # Project usage instructions
-└── tasks.json                # Data storage file
-🔧 Tools & Technologies
+├── main.cpp                  // Entry point with menu logic
+├── task.cpp                  // Task structure and operations
+├── file_manager.cpp          // File read/write logic
+├── date_util.cpp             // Date validation utilities
+├── search.cpp                // Search by ID functionality
+├── storage.cpp               // Task persistence logic
+├── filter.cpp                // Completed/incomplete task filtering
+├── test_task.cpp             // Tests for Task logic
+├── test_task_manager.cpp     // Tests for TaskManager
+├── developer_guide.md        // Developer documentation
+├── README.md                 // User-facing guide
+└── tasks.json                // Persistent task storage
+⚙️ Tools & Technologies
 Language: C++
 
-Compiler: g++ / clang++
+Compiler: g++ or clang++
 
-Testing Framework: Custom or C++ assertions
+Testing: Manual tests or assertions (assert)
 
-Version Control: Git & GitHub
+Version Control: Git and GitHub
 
-📐 Design Principles
-Modular Design: Each core feature is separated into modules.
+🧱 Design Principles
+✅ Modular Code: Functions and logic are split across focused .cpp files.
 
-Separation of Concerns: Logic, UI, and data are independently managed.
+✅ Single Responsibility: Each module handles one concern (e.g., dates, tasks, filters).
 
-Single Responsibility Principle (SRP): Each class/module has one responsibility.
+✅ Readable & Maintainable: Clear naming, indentation, and comments.
 
-Readable Code: Naming conventions and clear formatting are followed.
+✅ Reusability: Code is structured to enable easy expansion or GUI integration.
 
-🔄 Development Workflow
-Clone Repository:
-
+🔨 How to Build & Run
+1. Clone the Repository
 bash
 Copy
 Edit
 git clone https://github.com/YourUsername/Task-Manager.git
-Compile the Program:
-
+cd Task-Manager
+2. Compile the Program
 bash
 Copy
 Edit
 g++ main.cpp task.cpp file_manager.cpp date_util.cpp search.cpp storage.cpp filter.cpp -o task_manager
-Run the Application:
-
+3. Run the Application
 bash
 Copy
 Edit
 ./task_manager
-Run Tests:
-
+🧪 Running Tests
+Compile and Run Individual Tests
 bash
 Copy
 Edit
 g++ test_task.cpp -o test_task && ./test_task
 g++ test_task_manager.cpp -o test_task_manager && ./test_task_manager
-🧪 Testing Guidelines
-Use assertions (assert()) to verify expected behavior.
+Ensure each test prints pass/fail feedback using assert().
 
-Test edge cases such as:
+🧭 Development Guidelines
+✍️ Write clean, modular functions.
 
-Invalid task IDs
+🧹 Use const where variables shouldn’t change.
 
-Empty fields
+📎 Add comments to explain logic.
 
-Past due dates
+📁 Group related logic into its own .cpp file.
 
-Write new test cases in test_task.cpp or test_task_manager.cpp for new features.
+🔄 Use Git branches for new features:
 
-💡 Best Practices
-Use const where applicable.
-
-Keep functions small and focused.
-
-Comment non-obvious logic.
-
-Maintain consistency with indentation and naming.
-
-Make atomic commits with meaningful messages.
-
-🤝 Contributing
+bash
+Copy
+Edit
+git checkout -b feature/task-filter
+🤝 Contributing Workflow
 Fork the repository.
 
-Create a new branch (feature/task-filtering).
+Create a feature branch.
 
-Commit your changes.
+Make changes with clear commits.
 
-Push and create a pull request.
+Push and submit a pull request with description.
+
+🆘 Need Help?
+Refer to README.md for user instructions.
+
+Reach out on issues or discussions tab for questions.
